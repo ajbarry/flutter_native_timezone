@@ -27,7 +27,7 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 30
 
-    namespace "com.whelksoft.flutter_native_timezone"
+    namespace 'com.whelksoft.flutter_native_timezone'
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -35,10 +35,14 @@ android {
     defaultConfig {
         targetSdkVersion 30
         minSdkVersion 16
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
     }
     lintOptions {
         disable 'InvalidPackage'
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 }
 
@@ -47,10 +51,10 @@ dependencies {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_18
+    targetCompatibility = JavaVersion.VERSION_18
 }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(18)
 }
